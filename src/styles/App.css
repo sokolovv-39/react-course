@@ -1,0 +1,28 @@
+@import url("chatArea.css");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+#root .chatsBox {
+  width: 27vw;
+  box-sizing: border-box;
+  padding-left: 19px;
+  padding-top: 10px;
+}
+#root .chatsBox header {
+  display: flex;
+  align-items: center;
+}
+#root .chatsBox header h2 {
+  margin-left: 3%;
+}
+#root .chatArea {
+  background-image: url("./images/chatBackground.jpg");
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 73vw;
+  height: 100vh;
+}/*# sourceMappingURL=App.css.map */
