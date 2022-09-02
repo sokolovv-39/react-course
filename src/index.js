@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import { createTheme } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { ThemeProvider } from '@emotion/react';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persist } from './redux/globalStore';
 
 const theme = createTheme({
   palette: {
@@ -18,6 +20,7 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={globalStore}>
+    <PersistGate persistor={persist}></PersistGate>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
@@ -28,5 +31,5 @@ root.render(
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
-  </Provider>
+  </Provider >
 );

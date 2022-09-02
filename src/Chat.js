@@ -9,16 +9,12 @@ import SendIcon from '@mui/icons-material/Send';
 import { useTheme } from "@emotion/react";
 import getElem from './styles/sendMsgButtonStyle';
 import messageIdentifier from "./styles/messages";
-import { useNavigate } from 'react-router-dom';
 
 export default function Chat() {
     const theme = useTheme();
     const params = useParams();
-    const navigate = useNavigate();
-    console.log(navigate)
     const chat = useSelector(getChat.bind(this, Number(params.chatID)));
     const messages = useSelector(getMessages.bind(this, chat.id));
-    console.log(messages)
     const [inputValue, setInputValue] = useState('');
     const dispatch = useDispatch();
     function sendMessage() {
