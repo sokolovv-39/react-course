@@ -13,14 +13,24 @@ export default function HomePage() {
         navigate('login');
     }
 
-    return (
-        <div>
-            <NavLink to='/login'>Sign in</NavLink>
-            <NavLink to='/register'>Sign Up</NavLink>
-            <h1>Home Page</h1>
-            <NavLink to='/contacts'><button type="button">My contacts</button></NavLink>
-            <Outlet />
-            <button type="button" onClick={handleLogout}>Logout</button>
-        </div>
-    )
+    if (user)
+        return (
+            <div>
+                <h1>Home Page</h1>
+                <NavLink to='/contacts' className='noMargin'><button type="button">My contacts</button></NavLink>
+                <Outlet />
+                <button type="button" onClick={handleLogout}>Logout</button>
+            </div>
+        )
+    else
+        return (
+            <div>
+                <h1>Hello!</h1>
+                <div>
+                    <NavLink className="noMargin" to='/login'><button className="noMargin" type="button">Sign In</button></NavLink>
+                    <NavLink to='/register'><button className="noMargin" type="button">Sign Up</button></NavLink>
+                </div>
+            </div>
+
+        )
 }
